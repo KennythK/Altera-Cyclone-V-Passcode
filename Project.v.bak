@@ -1,0 +1,46 @@
+//Moore
+module state_machine(clk, rst, x, z);
+input clk, rstn, x;
+output z;
+
+	reg [1:0] ps, ns;
+	parameter[1:0] s0 = 2'b00, s1 = 2'b01, s2 = 2'b10, s3 = 2'b11;
+	
+	always@(x,ps)
+		case(ps)
+			s0: if(x) ns = s0;
+				 else  ns = s1;
+			s1: if(x) ns = s0;
+				 else  ns = s2;
+			s2: if(x) ns = s0;
+				 else  ns = s3;
+			s3: if(x) ns = s0;
+				 else  ns = s0;
+				 
+				 default: ns = 2'bxx;
+			endcase
+			
+		assign z = (ps[0] & ps[1]);
+		
+		always @(negedge rstn, posedge clk)
+			if(rstn == 0)
+				ps <= s0;
+			else
+				ps <= ns;
+				
+endmodule
+
+//Seven Segment Display
+module seven_segment(q,h);
+input[3:0]q;
+output[6:0]h;
+
+assign h[0] = (q[2] & ~q[1] & ~q[0]) + (~q[3] & ~q[2] & ~q[1] & q[0]);
+assign h[1] = (q[2] & (q[1] ^ q[0]));
+assign h[2] = ~q[2] & q[1] & ~q[0];
+assign h[3] = (q[2] & ~q[1] & ~q[0]) + (~q[2] & ~q[1] & q[0]) + (q[2] & q[1] & q[0]);
+assign h[4] = (q[0]) +(q[2] & ~q[1]);
+assign h[5] = (~q[2] & q[1]) + (q[1] & q[0]) + (~q[3] & ~q[2] & q[0]);
+assign h[6] = (~q[3] & ~q[2] & ~q[1]) + (q[1] & q[2] & q[0]);
+
+endmodule

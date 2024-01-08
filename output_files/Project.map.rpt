@@ -1,0 +1,582 @@
+Analysis & Synthesis report for Project
+Tue Nov 23 14:26:38 2021
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |Project|state_machine:inst|ps
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Parameter Settings for User Entity Instance: state_machine:inst
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+ 16. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++---------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Nov 23 14:26:38 2021           ;
+; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Standard Edition ;
+; Revision Name                   ; Project                                         ;
+; Top-level Entity Name           ; Project                                         ;
+; Family                          ; Cyclone V                                       ;
+; Logic utilization (in ALMs)     ; N/A                                             ;
+; Total registers                 ; 0                                               ;
+; Total pins                      ; 53                                              ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 0                                               ;
+; Total DSP Blocks                ; 0                                               ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 0                                               ;
+; Total DLLs                      ; 0                                               ;
++---------------------------------+-------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; Project            ; Project            ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                          ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                ; Library ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------+---------+
+; Project.v                        ; yes             ; User Verilog HDL File              ; C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v   ;         ;
+; Project.bdf                      ; yes             ; User Block Diagram/Schematic File  ; C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.bdf ;         ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Estimate of Logic utilization (ALMs needed) ; 0               ;
+;                                             ;                 ;
+; Combinational ALUT usage for logic          ; 0               ;
+;     -- 7 input functions                    ; 0               ;
+;     -- 6 input functions                    ; 0               ;
+;     -- 5 input functions                    ; 0               ;
+;     -- 4 input functions                    ; 0               ;
+;     -- <=3 input functions                  ; 0               ;
+;                                             ;                 ;
+; Dedicated logic registers                   ; 0               ;
+;                                             ;                 ;
+; I/O pins                                    ; 53              ;
+;                                             ;                 ;
+; Total DSP Blocks                            ; 0               ;
+;                                             ;                 ;
+; Maximum fan-out node                        ; disp[41]~output ;
+; Maximum fan-out                             ; 1               ;
+; Total fan-out                               ; 53              ;
+; Average fan-out                             ; 0.50            ;
++---------------------------------------------+-----------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |Project                   ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 53   ; 0            ; |Project            ; Project     ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------+
+; State Machine - |Project|state_machine:inst|ps ;
++-------+-------+-------+-------+----------------+
+; Name  ; ps.s3 ; ps.s2 ; ps.s1 ; ps.s0          ;
++-------+-------+-------+-------+----------------+
+; ps.s0 ; 0     ; 0     ; 0     ; 0              ;
+; ps.s1 ; 0     ; 0     ; 1     ; 1              ;
+; ps.s2 ; 0     ; 1     ; 0     ; 1              ;
+; ps.s3 ; 1     ; 0     ; 0     ; 1              ;
++-------+-------+-------+-------+----------------+
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; state_machine:inst|ps~4               ; Lost fanout        ;
+; state_machine:inst|ps~5               ; Lost fanout        ;
+; state_machine:inst|ps.s0              ; Lost fanout        ;
+; state_machine:inst|ps.s1              ; Lost fanout        ;
+; state_machine:inst|ps.s2              ; Lost fanout        ;
+; state_machine:inst|ps.s3              ; Lost fanout        ;
+; Total Number of Removed Registers = 6 ;                    ;
++---------------------------------------+--------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                       ;
++-------------------------+--------------------+----------------------------------------------------+
+; Register name           ; Reason for Removal ; Registers Removed due to This Register             ;
++-------------------------+--------------------+----------------------------------------------------+
+; state_machine:inst|ps~4 ; Lost Fanouts       ; state_machine:inst|ps.s0, state_machine:inst|ps.s2 ;
+; state_machine:inst|ps~5 ; Lost Fanouts       ; state_machine:inst|ps.s1                           ;
++-------------------------+--------------------+----------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: state_machine:inst ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; s0             ; 00    ; Unsigned Binary                        ;
+; s1             ; 01    ; Unsigned Binary                        ;
+; s2             ; 10    ; Unsigned Binary                        ;
+; s3             ; 11    ; Unsigned Binary                        ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_lcell_comb     ; 1                           ;
+;     normal            ; 1                           ;
+;         0 data inputs ; 1                           ;
+; boundary_port         ; 53                          ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+    Info: Processing started: Tue Nov 23 14:26:32 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Project -c Project
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 4 design units, including 4 entities, in source file project.v
+    Info (12023): Found entity 1: state_machine File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 2
+    Info (12023): Found entity 2: mux4to1 File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 51
+    Info (12023): Found entity 3: bcdto7 File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 73
+    Info (12023): Found entity 4: lock File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 121
+Info (12021): Found 1 design units, including 1 entities, in source file project.bdf
+    Info (12023): Found entity 1: Project
+Warning (10236): Verilog HDL Implicit Net warning at Project.v(68): created implicit net for "disp" File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 68
+Info (12127): Elaborating entity "Project" for the top level hierarchy
+Info (12128): Elaborating entity "mux4to1" for hierarchy "mux4to1:inst1"
+Warning (10036): Verilog HDL or VHDL warning at Project.v(68): object "disp" assigned a value but never read File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 68
+Warning (10036): Verilog HDL or VHDL warning at Project.v(55): object "out" assigned a value but never read File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 55
+Warning (10235): Verilog HDL Always Construct warning at Project.v(60): variable "s0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 60
+Warning (10235): Verilog HDL Always Construct warning at Project.v(61): variable "s1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 61
+Warning (10235): Verilog HDL Always Construct warning at Project.v(62): variable "s2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 62
+Warning (10235): Verilog HDL Always Construct warning at Project.v(63): variable "s3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 63
+Warning (10230): Verilog HDL assignment warning at Project.v(68): truncated value with size 42 to match size of target (1) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 68
+Warning (10034): Output port "display" at Project.v(54) has no driver File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 54
+Warning (12158): Entity "mux4to1" contains only dangling pins
+Info (12128): Elaborating entity "state_machine" for hierarchy "state_machine:inst"
+Warning (10235): Verilog HDL Always Construct warning at Project.v(19): variable "x" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 19
+Warning (10235): Verilog HDL Always Construct warning at Project.v(19): variable "state0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 19
+Warning (10235): Verilog HDL Always Construct warning at Project.v(25): variable "state1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 25
+Warning (10235): Verilog HDL Always Construct warning at Project.v(25): variable "x" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 25
+Warning (10235): Verilog HDL Always Construct warning at Project.v(31): variable "state2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 31
+Warning (10235): Verilog HDL Always Construct warning at Project.v(31): variable "x" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 31
+Warning (10240): Verilog HDL Always Construct warning at Project.v(14): inferring latch(es) for variable "state1", which holds its previous value in one or more paths through the always construct File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Warning (10240): Verilog HDL Always Construct warning at Project.v(14): inferring latch(es) for variable "state2", which holds its previous value in one or more paths through the always construct File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Warning (10240): Verilog HDL Always Construct warning at Project.v(14): inferring latch(es) for variable "state3", which holds its previous value in one or more paths through the always construct File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[0]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[1]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[2]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[3]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[4]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[5]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[6]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[7]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[8]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[9]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[10]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[11]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[12]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[13]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[14]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[15]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[16]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[17]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[18]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[19]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[20]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[21]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[22]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[23]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[24]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[25]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[26]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[27]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[28]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[29]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[30]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[31]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[32]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[33]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[34]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[35]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[36]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[37]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[38]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[39]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[40]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state3[41]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[0]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[1]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[2]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[3]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[4]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[5]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[6]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[7]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[8]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[9]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[10]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[11]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[12]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[13]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[14]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[15]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[16]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[17]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[18]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[19]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[20]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[21]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[22]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[23]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[24]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[25]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[26]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[27]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[28]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[29]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[30]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[31]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[32]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[33]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[34]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[35]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[36]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[37]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[38]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[39]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[40]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state2[41]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[0]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[1]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[2]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[3]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[4]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[5]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[6]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[7]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[8]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[9]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[10]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[11]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[12]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[13]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[14]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[15]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[16]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[17]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[18]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[19]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[20]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[21]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[22]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[23]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[24]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[25]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[26]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[27]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[28]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[29]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[30]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[31]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[32]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[33]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[34]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[35]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[36]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[37]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[38]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[39]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[40]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (10041): Inferred latch for "state1[41]" at Project.v(14) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 14
+Info (12128): Elaborating entity "bcdto7" for hierarchy "bcdto7:inst2"
+Warning (10230): Verilog HDL assignment warning at Project.v(88): truncated value with size 32 to match size of target (7) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 88
+Warning (10230): Verilog HDL assignment warning at Project.v(89): truncated value with size 32 to match size of target (7) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 89
+Warning (10230): Verilog HDL assignment warning at Project.v(91): truncated value with size 32 to match size of target (7) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 91
+Warning (10230): Verilog HDL assignment warning at Project.v(92): truncated value with size 32 to match size of target (7) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 92
+Warning (10230): Verilog HDL assignment warning at Project.v(93): truncated value with size 32 to match size of target (7) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 93
+Warning (10230): Verilog HDL assignment warning at Project.v(94): truncated value with size 32 to match size of target (7) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 94
+Warning (10230): Verilog HDL assignment warning at Project.v(96): truncated value with size 32 to match size of target (7) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 96
+Warning (10270): Verilog HDL Case Statement warning at Project.v(85): incomplete case statement has no default case item File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 85
+Warning (10240): Verilog HDL Always Construct warning at Project.v(84): inferring latch(es) for variable "out0", which holds its previous value in one or more paths through the always construct File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 84
+Warning (10230): Verilog HDL assignment warning at Project.v(104): truncated value with size 32 to match size of target (7) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 104
+Warning (10230): Verilog HDL assignment warning at Project.v(105): truncated value with size 32 to match size of target (7) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 105
+Warning (10230): Verilog HDL assignment warning at Project.v(107): truncated value with size 32 to match size of target (7) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 107
+Warning (10230): Verilog HDL assignment warning at Project.v(108): truncated value with size 32 to match size of target (7) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 108
+Warning (10230): Verilog HDL assignment warning at Project.v(109): truncated value with size 32 to match size of target (7) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 109
+Warning (10230): Verilog HDL assignment warning at Project.v(110): truncated value with size 32 to match size of target (7) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 110
+Warning (10230): Verilog HDL assignment warning at Project.v(112): truncated value with size 32 to match size of target (7) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 112
+Warning (10270): Verilog HDL Case Statement warning at Project.v(101): incomplete case statement has no default case item File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 101
+Warning (10240): Verilog HDL Always Construct warning at Project.v(100): inferring latch(es) for variable "out1", which holds its previous value in one or more paths through the always construct File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 100
+Info (10041): Inferred latch for "out1[0]" at Project.v(100) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 100
+Info (10041): Inferred latch for "out1[1]" at Project.v(100) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 100
+Info (10041): Inferred latch for "out1[2]" at Project.v(100) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 100
+Info (10041): Inferred latch for "out1[3]" at Project.v(100) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 100
+Info (10041): Inferred latch for "out1[4]" at Project.v(100) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 100
+Info (10041): Inferred latch for "out1[5]" at Project.v(100) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 100
+Info (10041): Inferred latch for "out1[6]" at Project.v(100) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 100
+Info (10041): Inferred latch for "out0[0]" at Project.v(84) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 84
+Info (10041): Inferred latch for "out0[1]" at Project.v(84) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 84
+Info (10041): Inferred latch for "out0[2]" at Project.v(84) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 84
+Info (10041): Inferred latch for "out0[3]" at Project.v(84) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 84
+Info (10041): Inferred latch for "out0[4]" at Project.v(84) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 84
+Info (10041): Inferred latch for "out0[5]" at Project.v(84) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 84
+Info (10041): Inferred latch for "out0[6]" at Project.v(84) File: C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/Project.v Line: 84
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "disp[41]" is stuck at GND
+    Warning (13410): Pin "disp[40]" is stuck at GND
+    Warning (13410): Pin "disp[39]" is stuck at GND
+    Warning (13410): Pin "disp[38]" is stuck at GND
+    Warning (13410): Pin "disp[37]" is stuck at GND
+    Warning (13410): Pin "disp[36]" is stuck at GND
+    Warning (13410): Pin "disp[35]" is stuck at GND
+    Warning (13410): Pin "disp[34]" is stuck at GND
+    Warning (13410): Pin "disp[33]" is stuck at GND
+    Warning (13410): Pin "disp[32]" is stuck at GND
+    Warning (13410): Pin "disp[31]" is stuck at GND
+    Warning (13410): Pin "disp[30]" is stuck at GND
+    Warning (13410): Pin "disp[29]" is stuck at GND
+    Warning (13410): Pin "disp[28]" is stuck at GND
+    Warning (13410): Pin "disp[27]" is stuck at GND
+    Warning (13410): Pin "disp[26]" is stuck at GND
+    Warning (13410): Pin "disp[25]" is stuck at GND
+    Warning (13410): Pin "disp[24]" is stuck at GND
+    Warning (13410): Pin "disp[23]" is stuck at GND
+    Warning (13410): Pin "disp[22]" is stuck at GND
+    Warning (13410): Pin "disp[21]" is stuck at GND
+    Warning (13410): Pin "disp[20]" is stuck at GND
+    Warning (13410): Pin "disp[19]" is stuck at GND
+    Warning (13410): Pin "disp[18]" is stuck at GND
+    Warning (13410): Pin "disp[17]" is stuck at GND
+    Warning (13410): Pin "disp[16]" is stuck at GND
+    Warning (13410): Pin "disp[15]" is stuck at GND
+    Warning (13410): Pin "disp[14]" is stuck at GND
+    Warning (13410): Pin "disp[13]" is stuck at GND
+    Warning (13410): Pin "disp[12]" is stuck at GND
+    Warning (13410): Pin "disp[11]" is stuck at GND
+    Warning (13410): Pin "disp[10]" is stuck at GND
+    Warning (13410): Pin "disp[9]" is stuck at GND
+    Warning (13410): Pin "disp[8]" is stuck at GND
+    Warning (13410): Pin "disp[7]" is stuck at GND
+    Warning (13410): Pin "disp[6]" is stuck at GND
+    Warning (13410): Pin "disp[5]" is stuck at GND
+    Warning (13410): Pin "disp[4]" is stuck at GND
+    Warning (13410): Pin "disp[3]" is stuck at GND
+    Warning (13410): Pin "disp[2]" is stuck at GND
+    Warning (13410): Pin "disp[1]" is stuck at GND
+    Warning (13410): Pin "disp[0]" is stuck at GND
+Info (17049): 6 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/output_files/Project.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 11 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "sw[7]"
+    Warning (15610): No output dependent on input pin "sw[6]"
+    Warning (15610): No output dependent on input pin "sw[5]"
+    Warning (15610): No output dependent on input pin "sw[4]"
+    Warning (15610): No output dependent on input pin "sw[3]"
+    Warning (15610): No output dependent on input pin "sw[2]"
+    Warning (15610): No output dependent on input pin "sw[1]"
+    Warning (15610): No output dependent on input pin "sw[0]"
+    Warning (15610): No output dependent on input pin "push"
+    Warning (15610): No output dependent on input pin "clock"
+    Warning (15610): No output dependent on input pin "resetn"
+Info (21057): Implemented 53 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 42 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 93 warnings
+    Info: Peak virtual memory: 4828 megabytes
+    Info: Processing ended: Tue Nov 23 14:26:38 2021
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:16
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/kouchke/Downloads/OneDrive_2021-11-23/EEL3075L Project/output_files/Project.map.smsg.
+
+
